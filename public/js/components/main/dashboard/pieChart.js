@@ -19,6 +19,8 @@ module.exports = function(data, id){
     });
   });
 
+  newData = _.sortByOrder(newData, ["value"], ["desc"]);
+
   console.log("New Data is: ", newData);
 
 
@@ -31,10 +33,8 @@ module.exports = function(data, id){
   var pie = d3.layout.pie()
     .value(function(d){return d.value;});
 
-  // declare an arc generator function
   var arc = d3.svg.arc().innerRadius(r - 60).outerRadius(r);
 
-  // select paths, use arc generator to draw
   var arcs = vis.selectAll("g.slice")
     .data(pie)
     .enter()
@@ -51,7 +51,6 @@ module.exports = function(data, id){
       return arc(d);
     });
 
-  // add the text
   arcs.append("svg:text")
     .attr("transform", function(d){
     	d.innerRadius = 0;
@@ -87,7 +86,5 @@ module.exports = function(data, id){
     legend.append('text')
       .attr('x', rect + spacing)
       .attr('y', rect - spacing)
-      .text(function(d, i) { return newData[i].label + ': '+newData[i].value; })
-      // .attr('stroke', '#2C3E50')
-      // .attr('stroke-width', 1);;
+      .text(function(d, i) { return newData[i].label + ': '+newData[i].value; });
 }
