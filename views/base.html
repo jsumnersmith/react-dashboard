@@ -3,11 +3,24 @@
   <head>
     <title>React Dashboard</title>
     <link rel="stylesheet" href="/css/site.css" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
   </head>
   <body>
+    <header class="rt-header">
+      <div class="rt-header-logo">
+        <i class="material-icons rt-icon-logo">fingerprint</i>
+        <h1 class="rt-h2">Dashboard</h1>
+      </div>
+      <div class="rt-header-state">
+        <i class="material-icons">account_circle</i>
+        <p class="rt-ui">Logout</p>
+      </div>
+    </header>
     <div class="rt-inner">
       {% block body %}
       {% endblock%}
     </div>
+    <script type="text/javascript" src="/js/bundle.js"></script>
   </body>
 </html>
