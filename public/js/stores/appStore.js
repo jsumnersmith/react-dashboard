@@ -1,6 +1,7 @@
 var Dispatcher = require('../dispatcher/dispatcher');
 var EventEmitter = require('events').EventEmitter;
 var Constants = require('../constants/constants');
+var _ = require('lodash');
 
 // Define initial data points
 var _data = {}, _state = false;
@@ -23,7 +24,7 @@ var Store = _.extend({}, EventEmitter.prototype, {
   },
 
   // Return state object
-  getData: function() {
+  getState: function() {
     return _state;
   },
 

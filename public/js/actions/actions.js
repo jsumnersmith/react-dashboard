@@ -4,10 +4,10 @@ var Constants = require('../constants/Constants');
 // Define action methods
 var AppActions = {
 
-  // Sample Action
+  // Initial Load of Data
   receiveData: function(data) {
     Dispatcher.handleAction({
-      actionType: Constants.SAMPLE_CONSTANT,
+      actionType: Constants.DATA_LOAD,
       data: data
     })
   },
