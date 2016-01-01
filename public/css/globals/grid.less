@@ -1,0 +1,40 @@
+
+// Layout Functionality
+.rt-inner
+{
+  width: 100%;
+  .padding-right(1);
+  .padding-left(1);
+}
+
+/* Grid System */
+.col() {
+  display: inline-block;
+  .font-size(1.8); //need to reset default text size on columns
+  vertical-align: top;
+}
+.col(@columnSize) {
+  width: 100% / 12 * @columnSize;
+}
+
+.rt-grid
+{
+  display: inline-block;
+  width: 100%;
+  font-size: 0; //font-size:0 here makes the columns bump up next to one another
+
+  [class*='rt-col-']{ .col(); }
+
+  .rt-col-1 { .col(1); }
+  .rt-col-2 { .col(2); }
+  .rt-col-3 { .col(3); }
+  .rt-col-4 { .col(4); }
+  .rt-col-5 { .col(5); }
+  .rt-col-6 { .col(6); }
+  .rt-col-7 { .col(7); }
+  .rt-col-8 { .col(8); }
+  .rt-col-9 { .col(9); }
+  .rt-col-10 { .col(10); }
+  .rt-col-11 { .col(11); }
+  .rt-col-12 { .col(12); }
+}
