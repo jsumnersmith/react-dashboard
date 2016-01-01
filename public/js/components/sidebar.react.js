@@ -31,8 +31,8 @@ var Sidebar = React.createClass({
       <nav className="rt-sidebar">
         <ul className="rt-nav-items">
           <li className={"rt-nav-item " + (this.isActive('Dashboard') ? 'active' : '')} onClick={this.updateView.bind(this, "Dashboard")}>
-            <i className="material-icons">dashboard</i>
-            Dashboard
+            <i className="material-icons">donut_large</i>
+            Overview
           </li>
           <li className={"rt-nav-item " + (this.isActive('Channels') ? 'active' : '')} onClick={this.updateView.bind(this, "Channels")}>
             <i className="material-icons">timeline</i>

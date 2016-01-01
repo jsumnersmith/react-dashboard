@@ -10,17 +10,20 @@
     <header class="rt-header">
       <div class="rt-header-logo">
         <i class="material-icons rt-icon-logo">fingerprint</i>
-        <h1 class="rt-h2">Dashboard</h1>
+        <h1 class="rt-h2">CLV Dashboard</h1>
       </div>
       <div class="rt-header-state">
-        <i class="material-icons">account_circle</i>
-        <p class="rt-ui">Logout</p>
+        {# <i class="material-icons">account_circle</i>
+        <p class="rt-ui">Logout</p> #}
       </div>
     </header>
     <div class="rt-inner">
       {% block body %}
       {% endblock%}
     </div>
+    <footer class="rt-footer">
+      &copy; 2015 CLV Dashboard
+    </footer>
     <script type="text/javascript" src="/js/bundle.js"></script>
   </body>
 </html>

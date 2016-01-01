@@ -1,9 +1,20 @@
 // Managing section types
 .rt-section
 {
-  background: darken(@white, .25%);
+  .margin(.5);
+  .border-radius(2px);
+  border: 1px solid fadeout(@blue-light, 80%);
+  box-shadow: 0px 0px 15px fadeout(@blue, 90%);
+  border-bottom: 5px solid @blue;
+  .rt-section-inner { .padding(2); }
+}
+
+.rt-section-title
+{
   .padding(1);
-  .margin-top(.5);
-  .margin-bottom(.5);
-  .border-radius(2px)
+  .margin-top(0);
+  .margin-bottom(2);
+  color: @white;
+  background: @blue-light;
+  border-bottom: 5px solid @blue;
 }

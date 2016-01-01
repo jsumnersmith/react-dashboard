@@ -6,13 +6,19 @@ var _ = require('lodash');
 // Define initial data points
 var _view = "Dashboard", _data = {};
 
+// Specific Data variables.
+var _comparison= {}, _channels = {};
+
 function setView(view){
   _view = view;
 }
 
 function setData(data){
   _data = data;
+  _comparison = data.data.comparison;
+  _channels = data.data.by_feature;
 }
+
 
 // Extend Cart Store with EventEmitter to add eventing capabilities
 var Store = _.extend({}, EventEmitter.prototype, {
@@ -24,6 +30,14 @@ var Store = _.extend({}, EventEmitter.prototype, {
 
   getData: function(){
     return _data;
+  },
+
+  getComparison: function(){
+    return _comparison;
+  },
+
+  getChannels: function(){
+    return _channels;
   },
 
   // Emit Change event
