@@ -5,10 +5,17 @@ var Constants = require('../constants/Constants');
 var AppActions = {
 
   // Initial Load of Data
-  receiveData: function(data) {
+  receiveAllData: function(data) {
     Dispatcher.handleAction({
       actionType: Constants.DATA_LOAD,
       data: data
+    })
+  },
+
+  setView: function(view) {
+    Dispatcher.handleAction({
+      actionType: Constants.CHANGE_VIEW,
+      view: view
     })
   },
 

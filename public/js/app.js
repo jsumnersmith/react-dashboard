@@ -7,7 +7,7 @@ var ChartAPI = require('./data/chartAPI');
 
 //Initially, load any data here.
 Data.init();
-ChartAPI.getChartData();
+ChartAPI.loadData();
 
 ReactDOM.render(
   <App />,

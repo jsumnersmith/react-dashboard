@@ -4,28 +4,26 @@ var Constants = require('../constants/constants');
 var _ = require('lodash');
 
 // Define initial data points
-var _data = {}, _state = false;
+var _view = "Dashboard", _data = {};
 
-// Set cart visibility
-function setData(data) {
-  _data = data;
+function setView(view){
+  _view = view;
 }
 
-function sample(){
-  return "hello";
+function setData(data){
+  _data = data;
 }
 
 // Extend Cart Store with EventEmitter to add eventing capabilities
 var Store = _.extend({}, EventEmitter.prototype, {
 
-  // Return data items
-  getData: function() {
-    return _data;
+  // Return view state object
+  getView: function() {
+    return _view;
   },
 
-  // Return state object
-  getState: function() {
-    return _state;
+  getData: function(){
+    return _data;
   },
 
   // Emit Change event
@@ -53,10 +51,12 @@ Dispatcher.register(function(payload) {
   switch(action.actionType) {
 
     // Respond to SAMPLE_CONSTANT action
-    case Constants.SAMPLE_CONSTANT:
-      //Run a method...
+    case Constants.CHANGE_VIEW:
+      setView(action.view)
       break;
-
+    case Constants.DATA_LOAD:
+      setData(action.data)
+      break;
     default:
       return true;
   }
