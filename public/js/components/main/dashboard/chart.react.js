@@ -16,10 +16,9 @@ var Chart = React.createClass({
   	return (
       <div className="rt-chart rt-col-4">
         <section className="rt-section">
-          <h3 className="rt-section-title">{name}</h3>
+          <h4 className="rt-section-title">{name}</h4>
           <div className="rt-section-inner">
             <div id={"chart-" + this.cssName(name)}></div>
-            <div id={"chart-" + this.cssName(name) + '-legend'}></div>
           </div>
         </section>
       </div>

@@ -10,7 +10,6 @@ module.exports = function(data, id){
   var rect = 18;
   var spacing = 4;
   var color = d3.scale.category10();
-  //ordinal().range(colorbrewer.RdBu[6]);
 
   var newData = []
   _.map(data, function(datum){
