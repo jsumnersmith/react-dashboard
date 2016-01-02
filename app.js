@@ -2,6 +2,8 @@
 // =============================
 var lessMiddleware  = require('less-middleware');
 var nunjucks = require('nunjucks');
+var http = require('http');
+var fs = require('fs');
 
 // Express Cofiguration
 // =============================
@@ -28,7 +30,7 @@ app.get('/', function(req, res) {
   res.render('index.html');
 });
 
-var port = 3000;
+var port = 3003;
 // Heroku
 if (process.env.PORT) {
   port = process.env.PORT;
