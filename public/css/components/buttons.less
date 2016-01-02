@@ -1,15 +1,22 @@
 //Buttons
 .rt-button
 {
-  background: @navy;
+  display: inline-block;
+  .padding-top(.75);
+  .padding-bottom(.75);
+  .padding-left(1.25);
+  .padding-right(1.25);
+  .margin-right(.5);
   color: @white;
-  .padding-top(1);
-  .padding-bottom(1);
-  .padding-left(2);
-  .padding-right(2);
-  &--round
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  background: @blue;
+  border-bottom: 5px solid @blue-light;
+  cursor: pointer;
+  &.active
   {
-    .padding(2);
-    border-radius: 100px;
+    background: @blue-light;
+    border-bottom: 5px solid @blue;
   }
 }
