@@ -28,12 +28,20 @@ app.get('/', function(req, res) {
   res.render('index.html');
 });
 
-app.get('/styleguide', function(req, res) {
-  res.render('styleguide.html');
-});
+var port = 3000;
+// Heroku
+if (process.env.PORT) {
+  port = process.env.PORT;
+} else {
+  try {
+    // Stagecoach option
+    port = fs.readFileSync(__dirname + '/data/port', 'UTF-8').replace(/\s+$/, '');
+  } catch (err) {
+    console.log(err);
+    console.log("I see no data/port file, defaulting to port " + port);
+  }
+}
 
-var server = app.listen(3000, function () {
-  var host = server.address().address;
-  var port = server.address().port;
-  console.log('Listening at http://'+host+':'+port);
+http.createServer(app).listen(port, '127.0.0.1', function() {
+  console.log("Express server listening on %s:%d in %s mode", '127.0.0.1', port, app.settings.env);
 });

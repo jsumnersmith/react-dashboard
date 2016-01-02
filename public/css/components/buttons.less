@@ -14,7 +14,9 @@
   background: @blue;
   border-bottom: 5px solid @blue-light;
   cursor: pointer;
-  &.active
+  .transition(all, .2s, ease-in-out);
+  &.active,
+  &:hover
   {
     background: @blue-light;
     border-bottom: 5px solid @blue;

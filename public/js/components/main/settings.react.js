@@ -7,7 +7,8 @@ var Settings = React.createClass({
   render: function() {
   	return (
       <div className="rt-settings">
-        <p>I am settings</p>
+        <p className="rt-help-text">You have no settings to update.</p>
+        <a className="rt-button">Thanks!</a>
       </div>
   	);
   }
